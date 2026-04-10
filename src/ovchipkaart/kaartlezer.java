@@ -32,6 +32,8 @@ public class kaartlezer {
 		}
 	}
 	
+	// saldoBerekening, KMBerekening kunnen pas bemaakt worden als uitcheck ook is gemaakt
+	
 	
 	
 	
