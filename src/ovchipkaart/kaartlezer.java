@@ -27,7 +27,7 @@ public class kaartlezer {
 	}
 	
 	public boolean pasCheck(OVpas pas) {
-		if (pas.getPasnummer() == 1); {
+		if (pas.getPasnummer() == 1 && pas.getVervaljaar() > 2015); {
 			return true;
 		}
 	}
