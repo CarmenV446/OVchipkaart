@@ -38,7 +38,16 @@ public class OVpas {
 		
 	}
 
+	 // Constructor
+    public OVpas(int n, int h, int j, double s, boolean st) {
+    	pasnummer = n;
+    	huidigeKM = h;
+    	vervaljaar = j;
+    	saldo = s;
+    	status = st;
 
-	
+    }
+
+
 	
 }
