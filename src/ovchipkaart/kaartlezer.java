@@ -19,7 +19,6 @@ public class kaartlezer {
 		if  (pas.getStatus() == true) {
 			return false;
 			//als status op true staat dan betekent dat hij ingecheckt is 
-			//dus dan krijgt hij een false terug want dan mag hij niet verder
 		}
 		else {
 			return true;
@@ -32,7 +31,38 @@ public class kaartlezer {
 		}
 	}
 	
-	// saldoBerekening, KMBerekening kunnen pas bemaakt worden als uitcheck ook is gemaakt
+	public double saldoBerekening(OVpas pas) {
+		sumsaldo = pas.getSaldo() - (reisKM * 0.65);
+		pas.setSaldo(sumsaldo);
+		return sumsaldo;
+	}
+	public int KMBerekening(OVpas pas) {
+		nieuwKM = pas.getHuidigKM() - reisKM;
+		pas.setHuidigeKM(nieuwKM);
+		return nieuwKM;
+	}
+	
+	
+	public void uitchecken(OVpas pas) {
+		if (pas.getStatus() == true) {
+			KMBerekening(pas);
+			saldoBerekening(pas);
+			pas.setStatus(false);
+			
+		}	
+		else inchecken(pas);
+	}
+	public void inchecken(OVpas pas) {
+		if (statusCheck(pas) == true) {
+			uitchecken(pas);
+		}
+		else if (saldoCheck(pas) == true && pasCheck(pas) == true) {
+			System.out.println("Je bent ingecheckt");
+			pas.setStatus(true);
+		}
+		else System.out.println("Er is iets mis gegaan met inchecken");
+	}
+	// KMBerekening kunnen pas bemaakt worden als uitcheck ook is gemaakt
 	
 	
 	

@@ -26,6 +26,9 @@ public class OVpas {
 	public int getHuidigKM() {
 		return huidigeKM;
 	}
+	public void setHuidigeKM(int nieuwKM) {
+		this.huidigeKM = nieuwKM;
+	}
 	
 	public int getPasnummer() {
 		return pasnummer;
@@ -34,6 +37,7 @@ public class OVpas {
 		return vervaljaar;
 		
 	}
+
 
 	
 	
